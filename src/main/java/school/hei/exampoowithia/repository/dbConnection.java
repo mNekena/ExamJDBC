@@ -9,11 +9,14 @@ import java.sql.SQLException;
 @Component
 public class dbConnection {
     public Connection getConnection() {
+        String url = System.getenv("DB_URL");
+        String user = System.getenv("DB_USER");
+        String password = System.getenv("DB_PASSWORD");
         try {
             var connection = DriverManager.getConnection(
-                    "jdbc:postgresql://localhost:5432/bank",
-                    "mnekena",
-                    "000000"
+                    url,
+                    user,
+                    password
             );
             return connection;
         } catch (SQLException e) {
