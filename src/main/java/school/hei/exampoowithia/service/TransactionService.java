@@ -12,7 +12,15 @@ import java.util.List;
 public class TransactionService {
     private final TransactionRepository transactionRepository;
 
+    public List<TransactionDTO> getAllTransactions() {
+        return transactionRepository.findAll();
+    }
+
     public List<TransactionDTO> getTransactionsByAccountId(String accountId) {
         return transactionRepository.findAllByAccountId(accountId);
+    }
+
+    public TransactionDTO createTransaction(TransactionDTO transactionDTO) {
+        return transactionRepository.saveTransaction(transactionDTO);
     }
 }
