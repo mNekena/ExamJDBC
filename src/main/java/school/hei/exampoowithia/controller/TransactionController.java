@@ -2,16 +2,13 @@ package school.hei.exampoowithia.controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 import school.hei.exampoowithia.dto.TransactionDTO;
 import school.hei.exampoowithia.service.TransactionService;
 
 import java.util.List;
 
-@Controller
+@RestController
 @AllArgsConstructor
 public class TransactionController {
     private final TransactionService transactionService;
